@@ -10,6 +10,6 @@ if(!function_exists('password'))
 		
 		$new_password=password_hash($password,PASSWORD_BCRYPT,$opts);
 		
-		return ($return_salt)?$new_password:array('password'=>$new_password,'salt'=>$salt);
+		return (!$return_salt)?$new_password:array('password'=>$new_password,'salt'=>$salt);
 	}
 }
