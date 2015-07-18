@@ -23,4 +23,23 @@ class Stats extends CI_Controller
 		
 		$this->load->view('json_view.php',array('status'=>$status,'data'=>$data,'message'=>$message));
 	}
+	
+	function set()
+	{
+		$score=$this->input->post('score');
+		$data=$this->stats->set($score);
+		
+		if($data===-1)
+		{
+			$status='err';
+			$message='user_not_logedin';	
+		}
+		elseif($data===-2)
+		{
+			$status='err';
+			$message='invalid_credit';
+		}
+		
+		$this->load->view('json_view.php',array('status'=>$status,'data'=>$data,'message'=>$message));
+	}
 }
