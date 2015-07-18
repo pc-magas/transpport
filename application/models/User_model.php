@@ -24,6 +24,8 @@ class User_model extends CI_Model
 		$result=$result->row();
 		$password=password($password,$result->salt);
 		
+		echo $result->password;
+		echo $password;
 		if($result->password==$password)
 		{
 			$this->db->set_userdata('uid',$result->uid);
