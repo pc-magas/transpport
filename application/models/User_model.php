@@ -22,13 +22,14 @@ class User_model extends CI_Model
 		
 		if($result->num_rows()===0) return -1;
 		$result=$result->row();
+
 		$password=password($password,$result->salt);
 		
 		echo $result->password."\n";
 		echo $password."\n";
 		if($result->password==$password)
 		{
-			$this->db->set_userdata('uid',$result->uid);
+			$this->session->set_userdata('uid',$result->uid);
 			return true;
 		}
 		
