@@ -44,7 +44,7 @@ class User_model extends CI_Model
 		$this->db->set('`username`',$username);
 		
 		$this->db->trans_start();
-		$this->db->insert('`User`');
+		$this->db->insert('`Users`');
 		$id=$this->db->last_id();
 		$this->db->trans_compplete();
 		
