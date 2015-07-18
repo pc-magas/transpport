@@ -45,7 +45,7 @@ class User extends CI_Controller
 		$username=$this->input->post('username');
 		$password=$this->input->post('password');
 		
-		$data=$this->db->login($username,$password);
+		$data=$this->user->login($username,$password);
 		
 		if($data==-2)
 		{
