@@ -56,7 +56,7 @@ class User_model extends CI_Model
 		else 
 		{
 			$this->db->trans_commit();
-			return id;
+			return $id;
 		}
 	}
 }
