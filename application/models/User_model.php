@@ -38,7 +38,6 @@ class User_model extends CI_Model
 		if($this->session->has_userdata('uid')) return false;
 		
 		$password=password($password);
-		var_dump($password);
 		$this->db->set('`salt`',$password['salt']);
 		$this->db->set('`password`',$password['password']);
 		$this->db->set('`username`',$username);
