@@ -55,7 +55,7 @@ class User extends CI_Controller
 		elseif($data==-1)
 		{
 			$status='err';
-			$message='user_not_logedin';
+			$message='user_not_exists';
 		}
 		
 		$this->load->view('json_view.php',array('status'=>$status,'data'=>$data,'message'=>$message));
