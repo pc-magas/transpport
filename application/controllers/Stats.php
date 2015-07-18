@@ -20,6 +20,10 @@ class Stats extends CI_Controller
 			$status='err';
 			$message='user_not_logedin';	
 		}
+		elseif($data===false)
+		{
+			$data=0;
+		}
 		
 		$this->load->view('json_view.php',array('status'=>$status,'data'=>$data,'message'=>$message));
 	}

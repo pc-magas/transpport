@@ -14,9 +14,9 @@ class Stats_model extends CI_Model
 		if(!$this->session->has_userdata('uid')) return -1;
 		$uid=$this->session->userdata('uid');
 		
-		$ret=$this->db->select('SUM(`credit`) as `score`')->from('`Credits`')->where('`uid`',$uid)->get();
+		$ret=$this->db->select('`credit` as `score`')->from('`Credits`')->where('`uid`',$uid)->get();
 		
-		if($ret->num_rows()===0) return 0;
+		if($ret->num_rows()===0) return FALSE;
 		
 		return $ret->row()->score;
 	}
@@ -28,11 +28,29 @@ class Stats_model extends CI_Model
 		
 		if(!is_numeric($score)) return -2;
 		
-		$this->db->set('`uid`',$uid)->set('`credit`',$score);
+		$new_score=$this->get();
 		
+		if($new_score!==FALSE)
+		{
+			$this->db->set('`uid`',$uid)->set('`credit`',$score);
+		}
+		else 
+		{
+			$this->db->where('`uid`',$uid)->set('`credit`',intval($score)+intval($new_score));
+		}
+		
+		$id;
 		$this->db->trans_start();
-		$this->db->insert('`Credits`');
-		$id=$this->db->insert_id();
+		if($new_score===FALSE)
+		{
+			$this->db->insert('`Credits`');
+			$id=$this->db->insert_id();
+		}
+		else 
+		{
+			$this->db->update('`Credits`');
+			$id=true;
+		}
 		$this->db->trans_complete();
 		
 		if($this->db->trans_status()===FALSE)
