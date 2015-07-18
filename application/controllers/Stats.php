@@ -4,7 +4,7 @@ class Stats extends CI_Controller
 {
 	public function __construct()
 	{
-		parent::construct();
+		parent::__construct();
 		$this->load->model('Stats_model','stats');
 	}
 	
