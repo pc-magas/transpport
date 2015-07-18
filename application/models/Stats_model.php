@@ -51,6 +51,8 @@ class Stats_model extends CI_Model
 			$this->db->update('`Credits`');
 			$id=true;
 		}
+		
+		echo $this->db->last_query();
 		$this->db->trans_complete();
 		
 		if($this->db->trans_status()===FALSE)
