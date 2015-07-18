@@ -11,7 +11,7 @@ class Stats_model extends CI_Model
 	
 	public function get()
 	{
-		var_dumo($this->session->all_userdata());
+		var_dump($this->session->all_userdata());
 		if(!$this->session->has_userdata('uid')) return -1;
 		$uid=$this->session->userdata('uid');
 		
