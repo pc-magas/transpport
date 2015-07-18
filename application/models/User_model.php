@@ -50,12 +50,12 @@ class User_model extends CI_Model
 		
 		if($this->db->trans_status()===FALSE)
 		{
-			$this->db->rollback();
+			$this->db->trans_rollback();
 			return false;
 		}
 		else 
 		{
-			$this->db->commit();
+			$this->db->trans_commit();
 			return id;
 		}
 	}
