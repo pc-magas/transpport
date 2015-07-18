@@ -26,6 +26,9 @@ class Stats extends CI_Controller
 	
 	function set()
 	{
+		$status='ok';
+		$message='';
+		
 		$score=$this->input->post('score');
 		$data=$this->stats->set($score);
 		
