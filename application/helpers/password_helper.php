@@ -1,7 +1,7 @@
 <?php
 if(!function_exists('password'))
 {
-	function password($plaintext,$salt=null)
+	function password($password,$salt=null)
 	{
 		$return_salt=false;
 		if($return_salt=empty($salt)) $salt=mcrypt_create_iv(22,MCRYPT_DEV_URANDOM);
