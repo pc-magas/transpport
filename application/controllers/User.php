@@ -36,4 +36,29 @@ class User extends CI_Controller
 		
 		$this->load->view('json_view.php',array('status'=>$status,'data'=>$data,'message'=>$message));
 	}
+	
+	function login()
+	{
+		$status='ok';
+		$message='';
+		
+		$username=$this->input->post('username');
+		$password=$this->input->post('password');
+		
+		$data=$this->db->login($username,$password);
+		
+		if($data==-2)
+		{
+			$status='err';
+			$message='no_cedetials_given';
+		}
+		elseif($data==-1)
+		{
+			$status='err';
+			$message='user_not_logedin';
+		}
+		
+		$this->load->view('json_view.php',array('status'=>$status,'data'=>$data,'message'=>$message));
+	}
+	
 }
