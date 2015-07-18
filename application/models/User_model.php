@@ -43,7 +43,7 @@ class User_model extends CI_Model
 		$this->db->set('`password`',$password['password']);
 		$this->db->set('`username`',$username);
 		
-		$this->db->begin_transaction();
+		$this->db->trans_start();
 		$this->db->insert('`User`');
 		$id=$this->db->last_id();
 		$this->db->trans_compplete();
