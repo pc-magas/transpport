@@ -52,7 +52,6 @@ class Stats_model extends CI_Model
 			$id=true;
 		}
 		
-		echo $this->db->last_query();
 		
 		$this->db->trans_complete();
 		
