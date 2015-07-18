@@ -30,7 +30,7 @@ class Stats_model extends CI_Model
 		
 		$new_score=$this->get();
 		
-		if($new_score!==FALSE)
+		if($new_score===FALSE)
 		{
 			$this->db->set('`uid`',$uid)->set('`credit`',$score);
 		}
@@ -53,6 +53,7 @@ class Stats_model extends CI_Model
 		}
 		
 		echo $this->db->last_query();
+		
 		$this->db->trans_complete();
 		
 		if($this->db->trans_status()===FALSE)
