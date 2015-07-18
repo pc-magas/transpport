@@ -47,12 +47,12 @@ class User extends CI_Controller
 		
 		$data=$this->user->login($username,$password);
 		
-		if($data==-2)
+		if($data===-2)
 		{
 			$status='err';
 			$message='no_cedetials_given';
 		}
-		elseif($data==-1)
+		elseif($data===-1)
 		{
 			$status='err';
 			$message='user_not_exists';
