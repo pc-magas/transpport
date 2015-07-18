@@ -57,6 +57,11 @@ class User extends CI_Controller
 			$status='err';
 			$message='user_not_exists';
 		}
+		elseif($data===false)
+		{
+			$status='err';
+			$message='login_failed';
+		}
 		
 		$this->load->view('json_view.php',array('status'=>$status,'data'=>$data,'message'=>$message));
 	}

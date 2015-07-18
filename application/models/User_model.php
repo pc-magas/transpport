@@ -29,6 +29,8 @@ class User_model extends CI_Model
 			$this->db->set_userdata('uid',$result->uid);
 			return true;
 		}
+		
+		return false;
 	}
 	
 	private function has_user($username)
