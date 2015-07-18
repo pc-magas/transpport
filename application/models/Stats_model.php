@@ -11,11 +11,10 @@ class Stats_model extends CI_Model
 	
 	public function get()
 	{
-		var_dump($this->session->all_userdata());
 		if(!$this->session->has_userdata('uid')) return -1;
 		$uid=$this->session->userdata('uid');
 		
-		$ret=$this->select('SUM(`credit`) as `score`')->from('`Credits`')->where('`uid`',$uid)->get();
+		$ret=$this->db->select('SUM(`credit`) as `score`')->from('`Credits`')->where('`uid`',$uid)->get();
 		
 		if($ret->num_rows()===0) return 0;
 		
