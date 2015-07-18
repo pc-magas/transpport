@@ -26,7 +26,12 @@ class User extends CI_Controller
 		elseif($data===false)
 		{
 			$status='err';
-			$message='no_credetials_given';
+			$message='user_already_logedin';
+		}
+		elseif($data===-1)
+		{
+			$status='err';
+			$message='user_already_exists';
 		}
 		
 		$this->load->view('json_view.php',array('status'=>$status,'data'=>$data,'message'=>$message));

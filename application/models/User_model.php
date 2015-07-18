@@ -31,11 +31,20 @@ class User_model extends CI_Model
 		}
 	}
 	
+	private function has_user($username)
+	{
+		$result=$this->db->select('`username`')->from('`Users`')->get();
+		
+		return $result->num_rows()>0;
+	}
+	
 	public function register($username,$password)
 	{
 		if(empty($username) && empty($password)) return -2;
 		
 		if($this->session->has_userdata('uid')) return false;
+		
+		if($this->has_user($username)) return -1;
 		
 		$password=password($password);
 		$this->db->set('`salt`',$password['salt']);
