@@ -10,7 +10,7 @@ class Weapons_model extends CI_Model
 		$this->load->database();
 	}
 	
-	public function get_weapons($line_id=null)
+	public function get($line_id=null)
 	{
 		if(!$this->session->has_userdata('uid')) return -1;
 		$uid=$this->session->userdata('uid');
@@ -29,7 +29,7 @@ class Weapons_model extends CI_Model
 		return $result->result_arrray();
 	}
 	
-	public function add_weapon($line_id)
+	public function add($line_id)
 	{
 		if(!$this->session->has_userdata('uid')) return -1;
 		$uid=$this->session->userdata('uid');
