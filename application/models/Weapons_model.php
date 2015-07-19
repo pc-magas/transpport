@@ -22,7 +22,7 @@ class Weapons_model extends CI_Model
 		
 		if(!empty($line_id))
 		{
-			$this->db->where('`line_id`',$line_id);	
+			$this->db->where('`Lines`.`id`',$line_id);	
 		}
 		$result=$this->db->get();
 		
