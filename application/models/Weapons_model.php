@@ -16,7 +16,7 @@ class Weapons_model extends CI_Model
 		$uid=$this->session->userdata('uid');
 		
 		$this->db->select('`Lines`.`line_number` as `number`, `Lines`.`name` as `name`,`Lines`.`id` as `line_id`,`Weapons`.`level` as `level`,')
-				 ->from('`Lines`')->join('`Weapons`','Line.id=Weapon.line_id')->where('`uid`',$uid);
+				 ->from('`Lines`')->join('`Weapons`','Lines.id=Weapon.line_id')->where('`uid`',$uid);
 		
 		$result;
 		
