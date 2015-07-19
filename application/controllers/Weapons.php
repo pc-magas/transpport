@@ -1,6 +1,6 @@
 <?php
 
-class Stats extends CI_Controller
+class Weapons extends CI_Controller
 {
 	public function __construct()
 	{
