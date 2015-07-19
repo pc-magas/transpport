@@ -15,7 +15,7 @@ class Weapons_model extends CI_Model
 		if(!$this->session->has_userdata('uid')) return -1;
 		$uid=$this->session->userdata('uid');
 		
-		$this->db->select('`Lines`.`line_number` as `number`, `Lines`.`name` as `name`,`Lines`.`id` as `line_id`,`Weapons`.`level` as `level`,')
+		$this->db->select('`Weapons`.`times`,`Lines`.`line_number` as `number`, `Lines`.`name` as `name`,`Lines`.`id` as `line_id`,`Weapons`.`level` as `level`,')
 				 ->from('`Lines`')->join('`Weapons`','Lines.id=Weapons.line_id')->where('`Weapons`.`uid`',$uid);
 		
 		$result;
@@ -34,7 +34,7 @@ class Weapons_model extends CI_Model
 		if(!$this->session->has_userdata('uid')) return -1;
 		$uid=$this->session->userdata('uid');
 		
-		$data=$this->db->select('`line_id`,`level`,`points_to_lvl`')->from('`Weapons`')
+		$data=$this->db->select('`line_id`,`level`,`points_to_lvl`,`times`')->from('`Weapons`')
 						->where('`uid`',$uid)
 						->where('`line_id`',$line_id)->get();
 		
@@ -56,8 +56,8 @@ class Weapons_model extends CI_Model
 				$next_lvl=5;
 				$level++;
 			}
-			
-			$this->db->set('`level`',$level)->set('`points_to_lvl`',$next_lvl)->set('`uid`',$uid)->set('`line_id`',$line_id)->update('`Weapons`');
+			$times=parseint($data->times)+1;
+			$this->db->set('`level`',$level)->set('`points_to_lvl`',$next_lvl)->set('`uid`',$uid)->set('`line_id`',$line_id)->set('`times`',$times)->update('`Weapons`');
 		}
 		
 		$this->db->trans_complete();
@@ -73,5 +73,7 @@ class Weapons_model extends CI_Model
 			return true;
 		}
 	}
+	
+	
 }
 
