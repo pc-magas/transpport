@@ -56,7 +56,7 @@ class Weapons_model extends CI_Model
 				$next_lvl=5;
 				$level++;
 			}
-			$times=parseint($data->times)+1;
+			$times=intval($data->times)+1;
 			$this->db->set('`level`',$level)->set('`points_to_lvl`',$next_lvl)->set('`uid`',$uid)->set('`line_id`',$line_id)->set('`times`',$times)->update('`Weapons`');
 		}
 		
