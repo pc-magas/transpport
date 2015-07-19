@@ -26,7 +26,7 @@ class Weapons_model extends CI_Model
 		}
 		$result=$this->db->get();
 		
-		return $result->result_arrray();
+		return $result->result_array();
 	}
 	
 	public function add($line_id)
