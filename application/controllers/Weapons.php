@@ -34,7 +34,7 @@ class Weapons extends CI_Controller
 		$message='';
 		
 		$w=$this->input->post('weapon_id');
-		$data=$this->stats->add_weapon($w);
+		$data=$this->stats->add($w);
 		
 		if($data===-1)
 		{
