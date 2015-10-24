@@ -7,46 +7,46 @@ class Weapons extends CI_Controller
 		parent::__construct();
 		$this->load->model('Weapons_model','weapons');
 	}
-	
+
 	function get()
 	{
 		$status='ok';
 		$message='';
-		
+
 		$data=$this->weapons->get();
-		
+
 		if($data===-1)
 		{
-			$status='err';
-			$message='user_not_logedin';	
+			$status='log';
+			$message='user_not_logedin';
 		}
 		elseif($data===false)
 		{
 			$data=0;
 		}
-		
+
 		$this->load->view('json_view.php',array('status'=>$status,'data'=>$data,'message'=>$message));
 	}
-	
+
 	function add()
 	{
 		$status='ok';
 		$message='';
-		
+
 		$w=$this->input->post('weapon_id');
 		$data=$this->weapons->add($w);
-		
+
 		if($data===-1)
 		{
-			$status='err';
-			$message='user_not_logedin';	
+			$status='log';
+			$message='User has not beel noged in';
 		}
 		elseif($data===-2)
 		{
 			$status='err';
-			$message='invalid_credit';
+			$message='No weapon is given';
 		}
-		
+
 		$this->load->view('json_view.php',array('status'=>$status,'data'=>$data,'message'=>$message));
 	}
 }
