@@ -1,20 +1,23 @@
 var count=60;
 
+
+var
+
 /**
  * Constants
  */
-var total=0;
-var numberoftype1;
-var numberoftype2;
-var finpx;
-var finpy;
-var k;
-var j;
-var test;
-var xmax=8;
-var ymax=8;
-var xtype= new Array(xmax);
-var ytype= new Array(xmax);
+ total=0,
+ numberoftype1,
+ numberoftype2,
+ finpx,
+ finpy,
+ k,
+j,
+test,
+xmax=8,
+ymax=8,
+xtype= new Array(xmax),
+ytype= new Array(xmax),
 
 /* KAT
 xmax = 8,
@@ -22,22 +25,22 @@ ymax = 8,
 xtype = new Array(xmax),
 */
 
-var WIDTH  = 400;
-var HEIGHT = 500;
+WIDTH  = 400,
+HEIGHT = 500,
 
-var pi = Math.PI;
+pi = Math.PI,
 
-var UpArrow   = 38;
-var DownArrow = 40;
-var LeftArrow = 37;
-var RightArrow = 39;
+UpArrow   = 38,
+DownArrow = 40,
+LeftArrow = 37,
+RightArrow = 39,
 
 /**
  * Game elements
  */
-var canvas;
-var ctx=null;
-var keystate;
+canvas,
+ctx,
+keystate,
 
 /**
  * The player paddle
@@ -45,119 +48,123 @@ var keystate;
  * @type {Object}
  */
 tramp={
-	      x:0,
-	      y:0,
+	x:0,
+	y:0,
 
-        width: 50,
-	      height: 50,
-        update: function()
-        {
-          if(keystate[evt.keyCode]==true)
-          {
+	width: 50,
+	height: 50,
+    update: function() {
 
-          }
-	      },
+if(keystate[evt.keyCode]==true)
+{
 
-	      /**
-	      * Draw the player paddle to the canvas
-	      */
-	      draw: function(xi, yi)
-        {
-		        this.x=xi;
-		        this.y=yi;
-	          var img = new Image();
-            img.src = './assets/img/icon4.jpg';
+}
+	},
 
-            var ptrn = ctx.createPattern(img,'repeat');
-            ctx.fillStyle = ptrn;
-		        ctx.fillRect(this.x, this.y, this.width, this.height);
-	      }
-      },
+	/**
+	 * Draw the player paddle to the canvas
+	 */
+	draw: function(xi, yi) {
+		this.x=xi;
+		this.y=yi;
+	var img = new Image();
+img.src = './assets/img/icon4.jpg';
 
+var ptrn = ctx.createPattern(img,'repeat');
+  ctx.fillStyle = ptrn;
+		ctx.fillRect(this.x, this.y, this.width, this.height);
+
+
+
+	}
+
+},
 downplace={
-	           x:0,
-	           y:0,
+	x:0,
+	y:0,
 
-             width: 400,
-	           height: 200,
-             update: function()
-             {
+	width: 400,
+	height: 200,
+    update: function() {
 
-               if(keystate[evt.keyCode]==true)
-               {
+if(keystate[evt.keyCode]==true)
+{
 
-               }
-	            },
+}
+	},
 
-	            /**
-	            * Draw the player paddle to the canvas
-	            */
-	            draw: function()
-              {
-		              this.x=0;
-		              this.y=400;
-	                var img = new Image();
-                  img.src = './assets/img/icon4.jpg';
+	/**
+	 * Draw the player paddle to the canvas
+	 */
+	draw: function() {
+		this.x=0;
+		this.y=400;
+	var img = new Image();
+img.src = './assets/img/icon4.jpg';
 
-                  var ptrn = ctx.createPattern(img,'repeat');
-                  ctx.fillStyle = '#00cc00';
-                  ctx.fillRect(this.x, this.y, this.width, this.height);
-	            }
-          },
+var ptrn = ctx.createPattern(img,'repeat');
+  ctx.fillStyle = '#bdbdbd';
+		ctx.fillRect(this.x, this.y, this.width, this.height);
+
+
+
+	}
+
+},
 troley={
-          x:0,
-	        y:0,
+	x:0,
+	y:0,
 
-	        width: 50,
-	        height: 50,
-          update: function()
-          {
-		        if(sfaires.y<this.y)
-		        {
-			          this.height-=5;
-			          sfaires.y=player.y-20;
-		        }
-	        },
+	width: 50,
+	height: 50,
+    update: function() {
 
-	       /**
-	        * Draw the player paddle to the canvas
-	        */
-	        draw: function(xi, yi)
-          {
-		        this.x=xi;
-		        this.y=yi;
-		        var img = new Image();
-            img.src = './assets/img/icon3.jpg';
-            var ptrn = ctx.createPattern(img,'repeat');
-            ctx.fillStyle = ptrn;
-		        ctx.fillRect(this.x, this.y, this.width, this.height);
-	        }
-      },
+		if(sfaires.y<this.y)
+		{
+			this.height-=5;
+			sfaires.y=player.y-20;
+		}
+	},
 
+	/**
+	 * Draw the player paddle to the canvas
+	 */
+	draw: function(xi, yi) {
+		this.x=xi;
+		this.y=yi;
+		var img = new Image();
+img.src = './assets/img/icon3.jpg';
+var ptrn = ctx.createPattern(img,'repeat');
+  ctx.fillStyle = ptrn;
+		ctx.fillRect(this.x, this.y, this.width, this.height);
+	}
+
+},
 metro={
-	      x:0,
-	      y:0,
+	x:0,
+	y:0,
 
-	      width: 50,
-	      height: 50,
-        update: function() {},
+	width: 50,
+	height: 50,
+    update: function() {
 
-	      /**
-	       * Draw the player paddle to the canvas
-	      */
-	      draw: function(xi, yi)
-        {
-		        this.x=xi;
-		        this.y=yi;
-	          var img = new Image();
-            img.src = './assets/img/icon2.jpg';
-            var ptrn = ctx.createPattern(img,'repeat');
-            ctx.fillStyle = ptrn;
-		        ctx.fillRect(this.x, this.y, this.width, this.height);
-	      }
 
-      },
+	},
 
+	/**
+	 * Draw the player paddle to the canvas
+	 */
+	draw: function(xi, yi) {
+		this.x=xi;
+		this.y=yi;
+	var img = new Image();
+img.src = './assets/img/icon2.jpg';
+var ptrn = ctx.createPattern(img,'repeat');
+  ctx.fillStyle = ptrn;
+		ctx.fillRect(this.x, this.y, this.width, this.height);
+	}
+
+},
 menu={
 	x:0,
 	y:0,
@@ -176,10 +183,10 @@ menu={
 		this.x=50;
 		this.y=420;
 			var imgs = new Image();
-imgs.src = './asets/img/menu.png';
+imgs.src = 'menu.png';
 var ptrn = ctx.createPattern(imgs,'repeat');
   ctx.fillStyle = ptrn;
-         ctx.fillStyle = ptrn;
+         ctx.fillStyle = '#bdbdbd';
 		ctx.fillRect(this.x, this.y, this.width, this.height);
 	}
 
@@ -269,101 +276,84 @@ var ptrn = ctx.createPattern(img,'repeat');
  *
  * @type {Object}
  */
- /**
-  * The ai paddle
-  *
-  * @type {Object}
-  */
 
- /**
-  * The ball object
-  *
-  * @type {Object}
-  */
+/**
+ * Starts the game
+ */
+  function getMousePos(canvas, evt) {
+        var rect = canvas.getBoundingClientRect();
+        return {
+          x: evt.clientX - rect.left,
+          y: evt.clientY - rect.top
+        };
+      }
+function main() {
+	// create, initiate and append game canvas
+	canvas = document.createElement("canvas");
+	canvas.width = WIDTH;
+	canvas.height = HEIGHT;
+	ctx = canvas.getContext("2d");
+	document.body.appendChild(canvas);
+	var firpx=0;
+	var firpy=0;
+	keystate = {};
+	// keep track of keyboard presses
+	document.addEventListener("mousedown", function(evt) {
+		keystate[evt.keyCode] = true;
+		var mousePos = getMousePos(canvas, evt);
 
- /**
-  * Starts the game
-  */
-  function getMousePos(canvas, evt)
-  {
-     var rect = canvas.getBoundingClientRect();
-     return {
-              x: evt.clientX - rect.left,
-              y: evt.clientY - rect.top
-            };
-  }
+		if(mousePos.y<400)
+		{
+			firpx=mousePos.x/50;
+			firpx=firpx;
+			firpx=parseInt(firpx);
+			firpy=mousePos.y/50;
+			firpy=firpy;
+			firpy=parseInt(firpy);
 
-  function main()
-  {
-    canvas=$("canvas").get(0);
- 	  // create, initiate and append game canvas
- 	  canvas.width = WIDTH;
- 	  canvas.height = HEIGHT;
- 	  ctx = canvas.getContext("2d");
- 	  $(canvas).appendTo('body');
+			numberoftype1=xtype[firpx][firpy];
+		}
 
-    var firpx=0;
- 	  var firpy=0;
- 	  keystate = {};
+	});
 
-	  document.addEventListener("mousedown", function(evt)
-    {
-		    keystate[evt.keyCode] = true;
-		    var mousePos = getMousePos(canvas, evt);
-
-		    if(mousePos.y<400)
-		    {
-			    firpx=mousePos.x/50;
-			    firpx=firpx;
-			    firpx=parseInt(firpx);
-			    firpy=mousePos.y/50;
-			    firpy=firpy;
-			    firpy=parseInt(firpy);
-
-			    numberoftype1=xtype[firpx][firpy];
-		    }
-
-	  });
-
-	document.addEventListener("mouseup", function(evt)
-  {
+	document.addEventListener("mouseup", function(evt) {
 		delete keystate[evt.keyCode];
 		var mousePos = getMousePos(canvas, evt);
-    if(mousePos.y<=400)
-    {
-      finpx=mousePos.x/50;
-      finpx=finpx;
-      finpx=parseInt(finpx);
-      finpy=mousePos.y/50;
-      finpy=finpy;
-      finpy=parseInt(finpy);
-      go1x=finpx-firpx;
-      go1y=finpx-firpx;
-      back1x=finpy-firpy;
-      back1y=finpy-firpy;
-      if(go1x>1)
-      {
-        finpx=firpx+1;
-      }
-      if(go1y<-1)
-      {
-	       finpx=firpx-1;
-      }
-      if(back1x>1)
-      {
-        finpy=firpy+1;
-      }
-      if(back1y<-1)
-      {
-	       finpy=firpy-1;
-      }
+if(mousePos.y<=400){
+finpx=mousePos.x/50;
+finpx=finpx;
+finpx=parseInt(finpx);
+finpy=mousePos.y/50;
+finpy=finpy;
+finpy=parseInt(finpy);
+go1x=finpx-firpx;
+go1y=finpx-firpx;
+back1x=finpy-firpy;
+back1y=finpy-firpy;
+if(go1x>1)
+{
+ finpx=firpx+1;
 
-      numberoftype2=xtype[finpx][finpy];
-      xtype[firpx][firpy]=numberoftype2;
-      xtype[finpx][finpy]=numberoftype1;
+}
+if(go1y<-1)
+{
+	finpx=firpx-1;
+}
+if(back1x>1)
+{
+ finpy=firpy+1;
+}
+if(back1y<-1)
+{
+	finpy=firpy-1;
+}
 
-      update_grif();
-    }
+numberoftype2=xtype[finpx][finpy];
+ xtype[firpx][firpy]=numberoftype2;
+ xtype[finpx][finpy]=numberoftype1;
+
+update_grif();
+}
 	});
 	init(); // initiate game objects
 	// game loop function
@@ -384,10 +374,9 @@ var ptrn = ctx.createPattern(img,'repeat');
  * Initatite game objects and set start positions
  */
 
-function init()
-{
+function init() {
 
-  makegrid();
+makegrid();
 	/* KAT
 	for (i = 0;i<xmax;i++) {
 		var ytype = new Array(ymax);
@@ -405,43 +394,51 @@ function init()
 
 	}
 	*/
+
+
 }
 
 /**
  * Update all game objects
  */
-function update()
-{
+function update() {
 	tramp.update
+
 }
 
 /**
  * Clear canvas and draw all game objects and net
  */
-function draw()
-{
-}
+function draw() {
 
-function update_delete_grid()
-{
-  ctx.fillRect(0, 00, WIDTH, HEIGHT);
+
+}
+function update_delete_grid(){
+ctx.fillRect(0, 00, WIDTH, HEIGHT);
 	ctx.save();
-  for(i=0; i<8; i++)
-  {
+ for(i=0; i<8; i++)
+ {
  		for(j=0; j<8; j++)
  		{
+
+
+
  			if(xtype[i][j]==1)
  			{
 
  				x=i*50;
  				y=j*50;
  				tramp.draw(x, y);
+
+
+
  			}
  			if(xtype[i][j]==2)
  			{
  				x=i*50;
  				y=j*50;
  				leoforeio.draw(x, y);
+
  			}
  			if(xtype[i][j]==3)
  			{
@@ -457,8 +454,7 @@ function update_delete_grid()
  			}
  		}
  	}
-
-  var w = 4;
+ 				 	var w = 4;
 	var x = (WIDTH - w)*0.5;
 	var y = 0;
 	var step = HEIGHT/20; // how many net segments
@@ -470,18 +466,21 @@ function update_grif()
 {
 	ctx.fillRect(0, 00, WIDTH, HEIGHT);
 	ctx.save();
-  for(i=0; i<8; i++)
-  {
+ for(i=0; i<8; i++)
+ {
  		for(j=0; j<8; j++)
  		{
+
+
+
  			if(xtype[i][j]==1)
  			{
 
  				x=i*50;
  				y=j*50;
  				tramp.draw(x, y);
-        if(i+1<8 && i-1>=0 && xtype[i+1][j]==1 && xtype[i-1][j]==1  )
- 				{
+              			if(i+1<8 && i-1>=0 && xtype[i+1][j]==1 && xtype[i-1][j]==1  )
+ 						{
  					var randNumMin = 1;
 					var randNumMax = 4;
 
@@ -495,11 +494,10 @@ function update_grif()
  					count=count+2;
  					document.getElementById("test1").innerHTML="You Win 5 Points";
  					total=total+5;
- 				}
-
-        if(j+1<8 && j-1>=0 && xtype[i][j+1]==1 && xtype[i][j-1]==1  )
- 				{
- 					var randNumMin = 1;
+ 							}
+ 					if(j+1<8 && j-1>=0 && xtype[i][j+1]==1 && xtype[i][j-1]==1  )
+ 						{
+ 												var randNumMin = 1;
 					var randNumMax = 4;
 
 					var randInt = (Math.floor(Math.random() * (randNumMax - randNumMin + 1)) + randNumMin);
@@ -508,12 +506,15 @@ function update_grif()
  					xtype[i][j+1]=randInt;
  					var randInt = (Math.floor(Math.random() * (randNumMax - randNumMin + 1)) + randNumMin);
  					xtype[i][j-1]=randInt;
- 					update_grif();
- 				  document.getElementById("test1").innerHTML="You Win 5 Points";
+ 						update_grif();
+ 				document.getElementById("test1").innerHTML="You Win 5 Points";
 
- 				  count=count+2;
- 				  total=total+5;
- 				}
+ 				count=count+2;
+ 				total=total+5;
+ 							}
+
+
+
  			}
  			if(xtype[i][j]==2)
  			{
@@ -531,14 +532,14 @@ function update_grif()
  					xtype[i+1][j]=randInt;
  					var randInt = (Math.floor(Math.random() * (randNumMax - randNumMin + 1)) + randNumMin);
  					xtype[i-1][j]=randInt;
- 					update_grif();
- 					count=count+4;
- 					document.getElementById("test1").innerHTML="You Win 10 Points";
- 					total=total+10;
+ 						update_grif();
+ 						count=count+4;
+ 						document.getElementById("test1").innerHTML="You Win 10 Points";
+ 						total=total+10;
  				}
  				if(j+1<8 && j-1>=0 && xtype[i][j+1]==2 && xtype[i][j-1]==2  )
  				{
- 					var randNumMin = 1;
+ 										var randNumMin = 1;
 					var randNumMax = 4;
 
 					var randInt = (Math.floor(Math.random() * (randNumMax - randNumMin + 1)) + randNumMin);
@@ -569,12 +570,11 @@ function update_grif()
  					xtype[i+1][j]=randInt;
  					var randInt = (Math.floor(Math.random() * (randNumMax - randNumMin + 1)) + randNumMin);
  					xtype[i-1][j]=randInt;
- 					update_grif();
- 					count=count+5;
- 				  document.getElementById("test1").innerHTML="You Win 15 Points";
- 				  total=total+15;
+ 						update_grif();
+ 						count=count+5;
+ 				document.getElementById("test1").innerHTML="You Win 15 Points";
+ 				total=total+15;
  				}
-
  				if(j+1<8  && j-1>=0 && xtype[i][j+1]==3 && xtype[i][j-1]==3  )
  				{
  										var randNumMin = 1;
@@ -592,8 +592,7 @@ function update_grif()
  						total=total+15;
  				}
  			}
-
-      if(xtype[i][j]==4)
+  			if(xtype[i][j]==4)
  			{
  				x=i*50;
  				y=j*50;
@@ -645,9 +644,9 @@ function update_grif()
 
  				}
  				if(j+1<8 && j-1>=0 && xtype[i][j+1]==4 && xtype[i][j-1]==4  )
- 				{
+ 						{
 
- 					count=count+7;
+ 							count=count+7;
  					var randNumMin = 1;
 					var randNumMax = 4;
 
@@ -658,12 +657,17 @@ function update_grif()
  					var randInt = (Math.floor(Math.random() * (randNumMax - randNumMin + 1)) + randNumMin);
  					xtype[i][j-1]=randInt;
 
- 					update_grif();
- 				  document.getElementById("test1").innerHTML="You Win 20 Points";
- 				  total=total+20;
+ 							update_grif();
+ 				document.getElementById("test1").innerHTML="You Win 20 Points";
+ 				total=total+20;
  				}
  			}
+
+
  		}
+
+
+
  }
 
   downplace.draw();
@@ -684,96 +688,107 @@ function makegrid()
 
 	 for(i=0; i<8; i++)
    {
-   	  //edw prepei na dimiourgeitai pinakas y`
-   	  xtype[i]= new Array(ymax);
+   	//edw prepei na dimiourgeitai pinakas y`
+   	 xtype[i]= new Array(ymax);
       for(j=0; j<8; j++)
       {
         var randNumMin = 1;
-		    var randNumMax = 4;
+		var randNumMax = 4;
 
-		    var randInt = (Math.floor(Math.random() * (randNumMax - randNumMin + 1)) + randNumMin);
-        if(i>=2)
-        {
-          while(xtype[i-1][j]==randInt && xtype[i-2][j]==randInt)
-          {
-            var randInt = (Math.floor(Math.random() * (randNumMax - randNumMin + 1)) + randNumMin);
-          }
-
-        }
-
-        if(j>=2)
-        {
-            while(xtype[i][j-1]==randInt && xtype[i][j-2]==randInt )
-            {
+		var randInt = (Math.floor(Math.random() * (randNumMax - randNumMin + 1)) + randNumMin);
+               if(i>=2) {
+               while(xtype[i-1][j]==randInt && xtype[i-2][j]==randInt){
                var randInt = (Math.floor(Math.random() * (randNumMax - randNumMin + 1)) + randNumMin);
-            }
-        }
 
-        if(randInt==1)
-      	{
+               }
+
+                               }
+                                   if(j>=2){
+                                   	    while(xtype[i][j-1]==randInt && xtype[i][j-2]==randInt ){
+               var randInt = (Math.floor(Math.random() * (randNumMax - randNumMin + 1)) + randNumMin);
+
+               }
+                                   }
+      	if(randInt==1)
+      		{
       			x=i*50;
       			y=j*50;
 
       			tramp.draw(x, y);
       			xtype[i][j]=1;
-      	}
 
+
+
+      		}
       	if(randInt==2)
-      	{
+      		{
 
-				    x=i*50;
+				x=i*50;
       			y=j*50;
       			xtype[i][j]=2;
-      			leoforeio.draw(x, y);
-      	}
 
-        if(randInt==3 && xtype[i][j]==null)
-      	{
-			    x=i*50;
+
+
+      			leoforeio.draw(x, y);
+
+      		}
+      		if(randInt==3 && xtype[i][j]==null)
+      		{
+
+			x=i*50;
       		y=j*50;
       		xtype[i][j]=3;
-      		troley.draw(x, y);
-      	}
 
-        if(randInt==4 && xtype[i][j]==null)
-      	{
 
-			    x=i*50;
+
+      			troley.draw(x, y);
+
+      		}
+      		if(randInt==4 && xtype[i][j]==null)
+      		{
+
+			x=i*50;
       		y=j*50;
       		xtype[i][j]=4;
-      		metro.draw(x, y);
-      	}
 
-        if(xtype[i][j]!=null)
-      	{
-      		x=i*50;
-      		y=j*50;
-  				if(xtype==1)
-          {
+
+
+      			metro.draw(x, y);
+
+      		}
+         			if(xtype[i][j]!=null)
+      				{
+      				x=i*50;
+      				y=j*50;
+
+
+  						if(xtype==1){
       			tramp.draw(x, y);
-      		}
+      							}
+      						if(xtype==2)
+      								{
+      									leoforeio.draw(x, y);
+      							}
+      							if(xtype==3)
+      							{
+      								troley.draw(x, y);
+      							}
+      							if(xtype==4)
+      							{
+      								metro.draw(x, y);
+      							}
 
-          if(xtype==2)
-      		{
-      			leoforeio.draw(x, y);
-      		}
-      		if(xtype==3)
-      		{
-      			troley.draw(x, y);
-      		}
-      		if(xtype==4)
-      		{
-      				metro.draw(x, y);
-      		}
-      	}
-    }//End For
-}
 
-  downplace.draw();
-	menu.draw();
-	start.draw();
+      				}
 
-  // draw the net
+      }
+
+   }
+    downplace.draw();
+	   menu.draw();
+	   start.draw();
+
+   	// draw the net
 	var w = 4;
 	var x = (WIDTH - w)*0.5;
 	var y = 0;
@@ -791,11 +806,13 @@ function timer()
      clearInterval(counter);
      return;
   }
-  document.getElementById("timer").innerHTML=count + " secs"; // watch for spelling
+
+ document.getElementById("timer").innerHTML=count + " secs"; // watch for spelling
 }
 
-$(document).ready(function()
-{
-    main();
-});
+
+
+
+
 // start and run the game
+main();
