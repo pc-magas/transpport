@@ -12,7 +12,7 @@ var count=60;
  var j;
  var test;
  var xmax=8;
- var ymax=8,
+ var ymax=8;
  var xtype= new Array(xmax);
  var ytype= new Array(xmax);
 
@@ -22,22 +22,22 @@ ymax = 8,
 xtype = new Array(xmax),
 */
 
-WIDTH  = 400,
-HEIGHT = 500,
+var WIDTH  = 400;
+var HEIGHT = 500;
 
-pi = Math.PI,
+var pi = Math.PI;
 
-UpArrow   = 38,
-DownArrow = 40,
-LeftArrow = 37,
-RightArrow = 39,
+var UpArrow   = 38;
+var DownArrow = 40;
+var LeftArrow = 37;
+var RightArrow = 39;
 
 /**
  * Game elements
  */
-canvas,
-ctx,
-keystate,
+var canvas;
+var ctx;
+var keystate;
 
 /**
  * The player paddle
