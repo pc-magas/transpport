@@ -3,18 +3,18 @@ var count=60;
 /**
  * Constants
  */
- var total=0;
- var numberoftype1;
- var numberoftype2;
- var finpx;
- var finpy;
- var k;
- var j;
- var test;
- var xmax=8;
- var ymax=8;
- var xtype= new Array(xmax);
- var ytype= new Array(xmax);
+var total=0;
+var numberoftype1;
+var numberoftype2;
+var finpx;
+var finpy;
+var k;
+var j;
+var test;
+var xmax=8;
+var ymax=8;
+var xtype= new Array(xmax);
+var ytype= new Array(xmax);
 
 /* KAT
 xmax = 8,
@@ -36,7 +36,7 @@ var RightArrow = 39;
  * Game elements
  */
 var canvas;
-var ctx;
+var ctx=null;
 var keystate;
 
 /**
@@ -72,7 +72,6 @@ tramp={
             ctx.fillStyle = ptrn;
 		        ctx.fillRect(this.x, this.y, this.width, this.height);
 	      }
-
       },
 
 downplace={
@@ -296,15 +295,17 @@ var ptrn = ctx.createPattern(img,'repeat');
 
   function main()
   {
+    canvas=$("canvas").get(0);
  	  // create, initiate and append game canvas
- 	  canvas = document.createElement("canvas");
  	  canvas.width = WIDTH;
  	  canvas.height = HEIGHT;
  	  ctx = canvas.getContext("2d");
- 	  document.body.appendChild(canvas);
- 	  var firpx=0;
+ 	  $(canvas).appendTo('body');
+
+    var firpx=0;
  	  var firpy=0;
  	  keystate = {};
+
 	  document.addEventListener("mousedown", function(evt)
     {
 		    keystate[evt.keyCode] = true;
@@ -793,5 +794,8 @@ function timer()
   document.getElementById("timer").innerHTML=count + " secs"; // watch for spelling
 }
 
+$(document).ready(function()
+{
+    main();
+});
 // start and run the game
-main();

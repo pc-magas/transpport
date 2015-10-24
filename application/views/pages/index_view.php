@@ -18,13 +18,14 @@
 
 	}
 	</style>
-  <script src="./assets/js/viewModels.js"></script>
+  <script src="./assets/vendor/js/jquery.min.js"></script>
+  <script src="./assets/js/game.js"></script>
 </head>
 <body style="background:url('./assets/img/background.jpg');" >
 <div style="margin:auto; width:300px;" >Time:<span id="timer" style="color:#000; font-size:30px;" ></span></div>
 
 <div name="test1" style="margin:auto; width:300px;" id="test1" ></div>
 <div style="margin-left:50%; margin-top:-10px; width:300px;" >Total:<span id="test2" ></span></div>
-
+<canvas></canvas>
 </body>
 </html>
