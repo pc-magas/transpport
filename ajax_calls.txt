@@ -1,0 +1,93 @@
+Register User:
+
+POST:
+username:
+password:
+
+Url to Post: 
+./index.php/user/register
+
+Return JSON:
+status: OK on success
+data: The id of registered user
+message: When error is shows a message
+
+Login User:
+POST:
+username:
+password:
+
+Url to Post: 
+./index.php/user/login
+
+Return JSON:
+status: OK on success ERR on fail
+data: just ingore it
+message: When error is shows a message
+
+###########################################################################
+Για όπλα - bages whatever is called
+Για να τα πάρεις:
+GET:
+./index.php/weapons/get
+
+Επιστρέφει JSON:
+status:
+*)Err σε σφάλμα
+*)Log Αν ο χρήστης δεν είναι συνδεδεμένος
+*)ΟΚ σε επιτυχία
+
+message: When error is shows a message
+
+data: η λίστα με τα όπλα - δρομολόγια κλπ κλπ.
+
+Για να προσθαίσεις όπλο & ενημερώσεις το level ένος όπλου:
+POST:
+weapon_id: Η τιμή του πεδίου line_id που πήρες από το προηγούμενο CALL.
+
+url: ./index.php/weapons/set
+
+Επιστρέφει JSON:
+status:
+*)Err σε σφάλμα
+*)Log Αν ο χρήστης δεν είναι συνδεδεμένος
+*)ΟΚ σε επιτυχία
+
+message: When error is shows a message
+
+To data το αγνοείς.
+
+
+########################################################
+Για τελικο σκόρ:
+Για να λάβεις το σκόρ του χρήστη:
+GET: ./index.php/stats/get
+
+Επιστρέφει JSON:
+status:
+*)Err σε σφάλμα
+*)Log Αν ο χρήστης δεν είναι συνδεδεμένος
+*)ΟΚ σε επιτυχία
+
+To data είναι το ΣΚΟΡ του χρήστη.
+
+
+Για ΑΥΞΗΣΗ του σκορ ή εγγραφή σκόρ του χρήστη:
+POST:
+score: Το σκόρ του χρήστη ή οι έξτρα πόντοι που πήρε.
+
+URL:
+./index.php/stats/set
+
+return JSON:
+status:
+*)Err σε σφάλμα
+*)Log Αν ο χρήστης δεν είναι συνδεδεμένος
+*)ΟΚ σε επιτυχία
+
+message: When error is shows a message
+
+data: το τελικό σκορ του χρήστη την στιγμή που γίνεται το call.
+
+ΣΗΜΕΙΩΣΗ: Το καλείς ΚΑΘΕ φορά που κάνεις 3-4τράδες και n-άδες γενικότερα και αυτόματα προσθαίτει το σκόρ το βάζει στην βάση και το επιστρέσεις ουσιαστικά κάνεις POST τους έξτρα πόντους που πήρε.
+
