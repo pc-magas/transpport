@@ -13,6 +13,12 @@ class Pages extends CI_Controller
   {
     $this->load->view('pages/index_view.php');
   }
+
+  public function lala()
+  {
+    echo "Hello";
+  }
+
 }
 
 ?>
