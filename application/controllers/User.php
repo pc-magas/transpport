@@ -7,17 +7,17 @@ class User extends CI_Controller
 		parent::__construct();
 		$this->load->model('User_model','user');
 	}
-	
+
 	function register()
 	{
 		$status='ok';
 		$message='';
-		
+
 		$username=$this->input->post('username');
 		$password=$this->input->post('password');
-		
+
 		$data=$this->user->register($username,$password);
-		
+
 		if($data===-2)
 		{
 			$status='err';
@@ -33,20 +33,24 @@ class User extends CI_Controller
 			$status='err';
 			$message='user_already_exists';
 		}
-		
+		else
+		{
+			$message=$data;
+		}
+
 		$this->load->view('json_view.php',array('status'=>$status,'data'=>$data,'message'=>$message));
 	}
-	
+
 	function login()
 	{
 		$status='ok';
 		$message='';
-		
+
 		$username=$this->input->post('username');
 		$password=$this->input->post('password');
-		
+
 		$data=$this->user->login($username,$password);
-		
+
 		if($data===-2)
 		{
 			$status='err';
@@ -62,8 +66,8 @@ class User extends CI_Controller
 			$status='err';
 			$message='login_failed';
 		}
-		
+
 		$this->load->view('json_view.php',array('status'=>$status,'data'=>$data,'message'=>$message));
 	}
-	
+
 }
