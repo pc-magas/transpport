@@ -279,8 +279,8 @@ troley={
 
 	width: 50,
 	height: 50,
-    update: function() {
-
+  update: function()
+	{
 		if(sfaires.y<this.y)
 		{
 			this.height-=5;
@@ -291,13 +291,14 @@ troley={
 	/**
 	 * Draw the player paddle to the canvas
 	 */
-	draw: function(xi, yi) {
+	draw: function(xi, yi)
+	{
 		this.x=xi;
 		this.y=yi;
 		var img = new Image();
-img.src = base_url('icon3.jpg');
-var ptrn = ctx.createPattern(img,'repeat');
-  ctx.fillStyle = ptrn;
+		img.src = base_url('icon3.jpg');
+		var ptrn = ctx.createPattern(img,'repeat');
+  	ctx.fillStyle = ptrn;
 		ctx.fillRect(this.x, this.y, this.width, this.height);
 	}
 
@@ -308,7 +309,7 @@ metro={
 
 	width: 50,
 	height: 50,
-    update: function() {
+  update: function() {
 
 
 	},
@@ -319,10 +320,10 @@ metro={
 	draw: function(xi, yi) {
 		this.x=xi;
 		this.y=yi;
-	var img = new Image();
-img.src = base_url('icon2.jpg');
-var ptrn = ctx.createPattern(img,'repeat');
-  ctx.fillStyle = ptrn;
+		var img = new Image();
+		img.src = base_url('icon2.jpg');
+		var ptrn = ctx.createPattern(img,'repeat');
+  	ctx.fillStyle = ptrn;
 		ctx.fillRect(this.x, this.y, this.width, this.height);
 	}
 
@@ -344,13 +345,14 @@ menu={
 	draw: function() {
 		this.x=00;
 		this.y=420;
-			var imgs = new Image();
-imgs.src = base_url('menu.png');
-imgs.onload=function() {
-var ptrn = ctx.createPattern(imgs, '');
-  ctx.fillStyle = ptrn;
-		ctx.fillRect(350, 400, 25, 25);
-	}
+		var imgs = new Image();
+		imgs.src = base_url('menu.png');
+		imgs.onload=function()
+		{
+			var ptrn = ctx.createPattern(imgs, '');
+  		ctx.fillStyle = ptrn;
+			ctx.fillRect(350, 400, 25, 25);
+		}
 	}
 
 },
@@ -360,7 +362,7 @@ badges={
 
 	width: 80,
 	height: 80,
-    update: function() {
+  update: function() {
 
 
 	},
