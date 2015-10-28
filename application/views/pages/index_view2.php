@@ -109,7 +109,7 @@ $this->load->helper('url');
 			<canvas width="400" height="500" id="canvas"  ></canvas>
 			<?php
 			?>
-			<div style="width:400px; height:170px; background:url(<?php echo base_url('./assets/img/footer.png'); ?>) no-repeat; position:relative; margin-top:410px; margin-left:auto; margin-right:auto;" >
+			<div style="width:400px; height:170px; background:url(<?php echo base_url('./assets/img/footer.png')?>) no-repeat; position:relative; margin-top:410px; margin-left:auto; margin-right:auto;" >
 				<button  onclick="document.getElementById('footerbadges2').style.display='none'; document.getElementById('footerbadges1').style.display='block';" style="width:30px; height:100px; position:absolute; top:35px; left:00px; outline:none; cursor:pointer;  background:transparent; border:none;" >
 
 				</button>
@@ -122,7 +122,7 @@ $this->load->helper('url');
 								</div>
 								<div style="position:relative; float:left; width:70px; height:70px; margin:15px;" >
 									<img src="<?=base_url('/assets/img/bg2.svg')?>" style="height:100%; width:100%;" />
-								</div>''
+								</div>
 							</div>
 							<div id="footerbadges2" style="width:330px; display:none; height:100px; position:relative; top:35px;   margin-left:30px;" >
 								<div style="position:relative; float:left; width:70px; height:70px; margin:15px; margin-left:25px;" >
@@ -161,7 +161,6 @@ var count=60;
 
 
 var
-
 /**
  * Constants
  */

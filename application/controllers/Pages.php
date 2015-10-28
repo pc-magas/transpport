@@ -11,7 +11,7 @@ class Pages extends CI_Controller
 
   public function index()
   {
-    $this->load->view('pages/index_view.php');
+    $this->load->view('pages/index_view2.php');
   }
 
 
