@@ -1,0 +1,238 @@
+
+h1 	{color:#e74332; font-size:1.8em; position:relative; } /* oi zwes sto gameplay! */
+h2 	{color:#fff; }
+h3 	{color: #0064A6; font-size:1.8em;  margin-bottom:10%;} /* sto login, o titlos! */
+h4 	{color:#fff; }
+h5	{color:#fff; font-size:1.6em;  position:absolute; margin:60px; 
+	padding-top: 10px; font-weight: 400;} /* gia to intro*/
+h6	{color: #EC0088; font-size:2.4em; font-weight: 400;		margin:0px; } /*ta koumpia!*/
+	
+body {
+	font-family: 'Roboto Slab', serif;
+	text-align: center;
+	background:url("../img/bg-texture-dark.png");repeat scroll 0% 0% transparent;
+	
+}
+
+canvas {
+	display: none;
+	position: absolute;
+	margin: auto;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	margin-top: 80px;		
+}
+
+.main {
+	width:480px; 
+	height:680px; 
+	margin:auto; 
+	position:relative;
+	background:url("../img/bg-texture.png"); repeat scroll 0% 0% transparent;
+}
+
+.general_button {
+	background:transparent; 
+	border:none; 
+	cursor:pointer; 
+	outline:none; 
+	display:block;
+	margin: auto;
+}
+
+
+
+.logo {
+    position: relative;
+    margin: auto;
+    padding-top: 20px;
+    display: block;
+}
+/* ---INTRO--- */
+
+#first	{display:block;}
+
+.intro {
+	width:463 px;
+	background:url("../img/intro-bg.svg"); no-repeat center; 
+	min-height:545px;
+	position:relative;
+}
+
+.intro .general_button  img	{margin-left:15px; margin-bottom: -2px;}
+
+.intro .general_button 	{
+    padding: 8px 25px;
+    position: relative;
+	top:420px;
+	background: #fff;
+    box-shadow: 4px 4px #004573;
+	border-radius: 10px;
+}
+
+.intro .general_button:active {
+	box-shadow: 2px 2px #004573;
+	top: 422px;
+	left:2px;
+}
+
+/*
+.intro .general_button:active {
+	box-shadow: 0 0 #004573;
+	top: 424px;
+	left:2px;
+}
+
+*/
+
+/* ---LOGIN--- */
+#login	 	{display:none;}
+
+.login_main 	{width:300px; height:300px; margin:auto;}
+
+#login label 	{font-size:1.2em; font-weight: 400; color: #404041;}
+
+#login input {  
+	width:280px; 
+	outline:none; 
+	padding: 1px 20px; 
+	margin: 5% 0px;
+	height:40px; 
+	border:none;
+	border-radius: 20px;
+	box-shadow: inset 0 2px 0 rgba(0,0,0,.3), 0 0 4px rgba(0,0,0,0.1);
+}
+
+#login.general_button  img	{margin-left:15px; margin-bottom: -2px;}
+#login .general_button { margin:15%;}
+
+#login  .general_button 	{
+    padding: 8px 25px;
+    position: relative;
+	background: #fff;
+    box-shadow: 4px 4px #737373;
+	border-radius: 10px;
+}
+
+#login  .general_button:active {
+	box-shadow: 2px 2px #737373;
+	top: 2px; left:2px;
+}
+
+/* ---I'M IN --- */
+#imin 		{display:none; position:relative;}
+
+
+#imin .general_button {
+	margin: 18% auto;
+    position: relative;
+}
+/*
+#imin-menu {
+	margin: auto;
+	position: relative;
+	display: block;
+	top: -12px;
+}
+*/
+
+/* ---MAIN MENU --- */
+#play 		{display:none; position:relative;}
+
+#play .general_button {
+	margin: 14% auto;
+    position: relative;
+	padding: 8px 35px;
+	background: #fff;
+    box-shadow: 4px 4px #737373;
+	border-radius: 10px;
+    transform: rotate(2deg);
+}
+
+#play .general_button:active {box-shadow: 2px 2px #737373; top: 2px; left:2px;}
+#play  .general_button  img	{margin-left:15px; margin-bottom: -2px;}
+
+#play #play_btn { transform: rotate(2deg); }
+#play #badges_btn { transform: rotate(-2deg); }
+#play #store_btn { transform: rotate(1deg); }
+#play #rank_btn { transform: rotate(-3deg); }
+
+
+
+/* ---GAMEPLAY--- */
+#gameplay 	{display:none;}
+
+.gm_footer 		{ }
+.gm_footer ul 	{margin: 0px; padding: 0px 20px;}
+.gm_footer ul li	{display:inline-block; padding: 0px 10px; top:3px;}
+.gm_footer h1 	{left:-12px}
+.gm_footer span 	{  }
+
+
+.board {
+	height:35px;
+	position:relative;
+	background: #fff;
+	border-radius: 20px;
+	box-shadow: inset 0 2px 0 rgba(0,0,0,.3), 0 0 4px rgba(0,0,0,0.1);
+}
+
+#clock	{width:80px;}
+
+#points	{width:100px; margin-left: 10px;}
+
+.board_img {
+	position: absolute;
+	top: 5px;
+    left: 9px;
+	height:25px;
+	
+}
+
+.board_text {
+	position: absolute;
+	top: 4px;
+    left: 40px;
+	color:#076A8A;
+	font-size: 1.3em;
+}
+
+#test1 {	display:none;color:#076A8A;}
+
+#menus {
+
+	width:95%; 
+	left: 2.5%;
+	height:600px; 
+	top:-10px;
+	background:url('../img/opacity.png') repeat; 
+	display:none; 
+	position:relative; 
+	z-index:100;
+	border-radius: 15px;
+}
+
+#ex 		{margin: 10px; float : right;}
+
+.badges 		{float:left;}
+.badges ul li 	{display:inline-flex; margin:10px; margin-top:0; padding:0;}
+.badges img 	{ margin-right:20px;}
+
+
+.buttons {
+	width:45%; 
+	height:40px; 
+	border:none; 
+	background:#fff;	
+	margin-left:10px; 
+	margin-right:10px; 
+	float:left; 
+	margin-top:30px; 
+	outline:none; 
+	cursor:pointer;
+}
+
+
+
