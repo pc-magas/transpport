@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="160.955px" height="50px" viewBox="0 0 160.955 50" enable-background="new 0 0 160.955 50" xml:space="preserve">
+<g>
+	<g>
+		<path fill-rule="evenodd" clip-rule="evenodd" fill="#FFFFFF" d="M24.34,0h112.273c13.444,0,24.341,11.193,24.341,25l0,0
+			c0,13.807-10.897,25-24.341,25H24.34C10.897,50,0,38.807,0,25l0,0C0,11.193,10.897,0,24.34,0z"/>
+	</g>
+	<defs>
+		<filter id="Adobe_OpacityMaskFilter" filterUnits="userSpaceOnUse" x="0" y="0" width="160.955" height="50">
+			
+				<feColorMatrix  type="matrix" values="-1 0 0 0 1  0 -1 0 0 1  0 0 -1 0 1  0 0 0 1 0" color-interpolation-filters="sRGB" result="source"/>
+		</filter>
+	</defs>
+	<mask maskUnits="userSpaceOnUse" x="0" y="0" width="160.955" height="50" id="SVGID_1_">
+		<g filter="url(#Adobe_OpacityMaskFilter)">
+			<image overflow="visible" width="166" height="55" xlink:href="250D6535.jpg"  transform="matrix(1 0 0 1 -2.5 -2.5)">
+			</image>
+		</g>
+	</mask>
+	<g opacity="0.75" mask="url(#SVGID_1_)">
+		<path fill-rule="evenodd" clip-rule="evenodd" d="M24.34,0h112.273c13.444,0,24.341,11.193,24.341,25l0,0
+			c0,13.807-10.897,25-24.341,25H24.34C10.897,50,0,38.807,0,25l0,0C0,11.193,10.897,0,24.34,0z"/>
+	</g>
+</g>
+<g>
+	<path fill-rule="evenodd" clip-rule="evenodd" fill="#076A8A" d="M20.005,9.979c5.805,0,10.51,4.783,10.51,10.684
+		s-4.705,10.684-10.51,10.684c-5.804,0-10.51-4.784-10.51-10.684S14.201,9.979,20.005,9.979z"/>
+	<path fill-rule="evenodd" clip-rule="evenodd" fill="#EB008A" d="M27.474,12.569c5.805,0,10.51,4.783,10.51,10.684
+		s-4.705,10.684-10.51,10.684c-5.804,0-10.51-4.784-10.51-10.684S21.669,12.569,27.474,12.569z"/>
+	<path fill-rule="evenodd" clip-rule="evenodd" fill="#02A5D8" d="M21.571,18.652c5.805,0,10.51,4.783,10.51,10.684
+		S27.376,40.02,21.571,40.02c-5.804,0-10.51-4.784-10.51-10.684S15.767,18.652,21.571,18.652z"/>
+</g>
+</svg>
