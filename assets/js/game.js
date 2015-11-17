@@ -413,6 +413,7 @@ var start={
 			var ptrn = ctx.createPattern(imgs,'repeat');
   		ctx.fillStyle = ptrn;
 			ctx.fillRect(148, 148, 148, 148);
+
 		}
 	}
 };
@@ -1004,7 +1005,7 @@ function makegrid()
 	var step = HEIGHT/20; // how many net segments
 
 	ctx.restore();
-	var counter=setInterval(timer, 1000); //1000 will  run it every 1 second
+	/*var counter=setInterval(timer, 1000); //1000 will  run it every 1 second
 function timer()
 {
   count=count-1;
@@ -1017,8 +1018,33 @@ function timer()
  document.getElementById("timer").innerHTML=count + " ''"; // watch for spelling
 
 }
+*/
+var output=$('#timer');
 
-		}
+var isPaused=false;
+ count=60;
+var counter= window.setInterval(function()
+{
+	if(!isPaused)
+	{
+		count--;
+		output.text(""+count);
+	}
+}, 1000);
+
+$("#pause").on('click',function(e)
+{
+	e.preventDefault();
+	isPaused=true;
+});
+
+$("#contin").on('click',function(e)
+{
+	e.preventDefault();
+	isPaused=false;
+});
+
+}
 
 
 
@@ -1034,4 +1060,5 @@ $(document).ready(function()
 
 		// start and run the game
 		main();
+
 });

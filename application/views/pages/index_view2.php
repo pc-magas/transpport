@@ -59,11 +59,11 @@ $this->load->helper('url');
 					<li class="board">	<img src="<?=base_url('/assets/img/time-board.svg')?>" height="32px" /> <div id="time"> <span id="timer" > </span></div> </li>
 					<li class="board">	<img src="<?=base_url('/assets/img/point-board.svg')?>" height="32px"/> <div id="test2"> </div> <div id="test1" name="test1"></div> </li>
 					<li>	<img src="<?=base_url('/assets/img/music.svg')?>" /> </li>
-					<li>	<a href="Javascript:;" onclick="document.getElementById('menus').style.display='block'; ask=false;" ><img src="<?=base_url('/assets/img/pause.svg')?>" /></a> </li>
+					<li>	<a id="pause" href="Javascript:;" onclick="document.getElementById('menus').style.display='block'; ask=false;" ><img src="<?=base_url('/assets/img/pause.svg')?>" /></a> </li>
 				</ul>
 			</div>
 
-			<div id="menus"><a href="Javascript:;" onclick="document.getElementById('menus').style.display='none'; update_grif(); ask=true;"  ><img src="<?=base_url('/assets/img/x.svg')?>" id="ex"/></a>
+			<div id="menus"><a id="contin" href="Javascript:;" onclick="document.getElementById('menus').style.display='none'; update_grif(); ask=true;"  ><img src="<?=base_url('/assets/img/x.svg')?>" id="ex"/></a>
 
 				<div  id="menu1" class="badges"	style="display:block;" >
 					<h2 >badges</h2>
