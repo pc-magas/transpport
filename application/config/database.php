@@ -64,9 +64,9 @@ $query_builder = TRUE;
 
 $db['default'] = array(
 	'dsn'	=> '',
-	'hostname' => defined($_ENV['OPENSHIFT_MYSQL_DB_HOST'])?$_ENV['OPENSHIFT_MYSQL_DB_HOST']:'localhost',
-	'username' => defined($_ENV['OPENSHIFT_MYSQL_DB_USER'])?$_ENV['OPENSHIFT_MYSQL_DB_USER']:'root',
-	'password' => defined($_ENV['OPENSHIFT_MYSQL_DB_PASSWORD'])?$_ENV['OPENSHIFT_MYSQL_DB_PASSWORD']:'root',
+	'hostname' => !empty($_ENV['OPENSHIFT_MYSQL_DB_HOST'])?$_ENV['OPENSHIFT_MYSQL_DB_HOST']:'localhost',
+	'username' => !empty($_ENV['OPENSHIFT_MYSQL_DB_USER'])?$_ENV['OPENSHIFT_MYSQL_DB_USER']:'root',
+	'password' => !empty($_ENV['OPENSHIFT_MYSQL_DB_PASSWORD'])?$_ENV['OPENSHIFT_MYSQL_DB_PASSWORD']:'root',
 	'database' => 'transport',
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
